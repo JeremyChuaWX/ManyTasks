@@ -1,16 +1,20 @@
-import { stub } from "src/utils/stub";
+import { Task } from "src/utils/types";
 import TaskComponent from "./taskcomponent";
+
+interface TaskListProps {
+  tasks: Task[];
+}
 
 function Header() {
   return <h1 className="text-5xl font-extrabold text-center">ManyTasks</h1>;
 }
 
-function TaskList() {
+function TaskList({ tasks }: TaskListProps) {
   return (
     <div className="flex flex-col gap-12">
       <Header />
       <div className="flex flex-col gap-4">
-        {stub.map((task, index) => (
+        {tasks.map((task, index) => (
           <TaskComponent key={index} task={task} />
         ))}
       </div>
