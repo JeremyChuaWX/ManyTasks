@@ -13,7 +13,7 @@ jobs:
           fetch-depth: 0 # important to fetch the changes to the previous commit
 
       - name: Prettify code
-        uses: creyD/prettier_action@4.2
+        uses: creyD/prettier_action@v4.2
         with:
           prettier_options: --write **/*.{ts,tsx,js,jsx,md}
           only_changed: True
