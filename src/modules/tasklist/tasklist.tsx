@@ -1,5 +1,5 @@
-import { Task } from "src/utils/types";
-import TaskComponent from "./taskcomponent";
+import { Task } from "../../utils/task";
+import TaskComponent from "./task-component";
 
 interface TaskListProps {
   tasks: Task[];

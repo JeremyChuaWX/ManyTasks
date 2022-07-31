@@ -1,6 +1,6 @@
 import { CheckIcon } from "@heroicons/react/solid";
 import { useState } from "react";
-import { Task } from "src/utils/types";
+import { Task } from "../../utils/task";
 
 interface TaskComponentProps {
   task: Task;

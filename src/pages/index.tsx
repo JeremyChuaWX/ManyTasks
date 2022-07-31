@@ -1,5 +1,5 @@
-import TaskList from "src/modules/tasklist/tasklist";
-import { stub } from "src/utils/stub";
+import TaskList from "../modules/tasklist/tasklist";
+import { stub } from "../utils/stub";
 
 function Home() {
   return (
