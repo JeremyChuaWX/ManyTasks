@@ -1,5 +1,6 @@
 import { Task } from "../../utils/task";
 import TaskComponent from "./task-component";
+import { PlusIcon } from "@heroicons/react/solid";
 
 interface TaskListProps {
   tasks: Task[];
@@ -15,11 +16,19 @@ function FilterComponent({ title }: { title: string }) {
 
 function FilterArrayComponent() {
   return (
-    <div className="flex justify-center gap-4">
+    <div className="flex gap-4">
       <FilterComponent title="Done" />
       <FilterComponent title="Today" />
       <FilterComponent title="Other" />
     </div>
+  );
+}
+
+function AddTaskButton() {
+  return (
+    <button>
+      <PlusIcon className="w-4 h-4 text-slate-500" />
+    </button>
   );
 }
 
@@ -31,11 +40,20 @@ function Header() {
   );
 }
 
+function ControlPanel() {
+  return (
+    <div className="flex justify-around">
+      <FilterArrayComponent />
+      <AddTaskButton />
+    </div>
+  );
+}
+
 function TaskList({ tasks }: TaskListProps) {
   return (
     <div className="flex flex-col gap-12">
       <Header />
-      <FilterArrayComponent />
+      <ControlPanel />
       <div className="flex flex-col gap-4">
         {tasks.map((task, index) => (
           <TaskComponent key={index} task={task} />

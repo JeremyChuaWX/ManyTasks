@@ -1,4 +1,4 @@
-import TaskList from "../modules/tasklist/tasklist";
+import TaskList from "../modules/tasklist/tasklist-component";
 import { stub } from "../utils/stub";
 
 function Home() {
