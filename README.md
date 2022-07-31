@@ -1,3 +1,16 @@
-# Create T3 App
+# ManyTasks
 
-This is an app bootstrapped according to the [init.tips](https://init.tips) stack, also known as the T3-Stack.
+A minimalist task manager.
+
+# Motivation
+
+Todo apps have become very bloated.
+
+# Features
+
+- Add tasks
+- Add sub-tasks
+
+# Primitive task object
+
+The task object itself will be a primitive object. "Projects" are just tasks with sub-tasks.
