@@ -11,8 +11,8 @@ Todo apps have become very bloated.
 - Add tasks
 - Add sub-tasks
 - Filter tasks
-    - Date
-    - Completion
+  - Date
+  - Completion
 
 # Primitive task object
 
