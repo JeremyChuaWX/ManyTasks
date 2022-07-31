@@ -1,20 +1,19 @@
 import { useSession } from "next-auth/react";
-import Image from "next/image";
+import Image from "next/future/image";
 
 function Avatar() {
   const { data: session } = useSession();
   const avatarUrl = session?.user?.image ?? "/avatar-blank.png";
 
   return (
-    <div className="w-10 h-10 rounded-full relative overflow-hidden">
-      <Image
-        alt="avatar image"
-        src={avatarUrl}
-        layout="fill"
-        objectFit="contain"
-        quality="40"
-      />
-    </div>
+    <Image
+      alt="avatar image"
+      src={avatarUrl}
+      width="40"
+      height="40"
+      className="rounded-full relative overflow-hidden"
+      quality="40"
+    />
   );
 }
 
