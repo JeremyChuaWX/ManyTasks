@@ -1,26 +1,30 @@
+import { TRPCError } from "@trpc/server";
 import { z } from "zod";
-import { createProtectedRouter } from "./protected-router";
+import { createProtectedRouter } from "../trpc/create-protected-router";
 
-export const taskRouter = createProtectedRouter()
-  .query("getAll", {
+const taskRouter = createProtectedRouter()
+  .query("all", {
     async resolve({ ctx }) {
       return await ctx.prisma.task.findMany({
         where: { userId: ctx.session.user.id },
       });
     },
   })
-  .mutation("createOne", {
+  .mutation("add", {
     input: z.object({
-      userId: z.string(),
       title: z.string(),
       description: z.string().nullish(),
       done: z.boolean(),
       due: z.date().nullish(),
     }),
     async resolve({ input, ctx }) {
+      const userId = ctx.session.user.id;
+
+      if (!userId) throw new TRPCError({ code: "BAD_REQUEST" });
+
       return await ctx.prisma.task.create({
         data: {
-          userId: input.userId,
+          userId,
           title: input.title,
           description: input.description,
           done: input.done,
@@ -29,3 +33,5 @@ export const taskRouter = createProtectedRouter()
       });
     },
   });
+
+export { taskRouter };

@@ -1,6 +1,6 @@
 import { CheckIcon } from "@heroicons/react/solid";
+import { Task } from "@prisma/client";
 import { useState } from "react";
-import { Task } from "../../utils/task";
 
 interface TaskComponentProps {
   task: Task;
@@ -23,7 +23,7 @@ function DoneButton({ done, handleDone }: DoneButtonProps) {
   );
 }
 
-function TaskComponent({ task }: TaskComponentProps) {
+function TaskCard({ task }: TaskComponentProps) {
   const [done, setDone] = useState<boolean>(task.done);
 
   function handleDone() {
@@ -34,10 +34,10 @@ function TaskComponent({ task }: TaskComponentProps) {
     <div className="flex items-center justify-between bg-slate-100 px-4 py-2 rounded-md">
       <div className="flex flex-col">
         <h1 className="font-bold">{task.title}</h1>
-        <p>{task.due}</p>
+        {task.due && <p>{task.due.toLocaleDateString()}</p>}
       </div>
       <DoneButton done={done} handleDone={handleDone} />
     </div>
   );
 }
-export default TaskComponent;
+export default TaskCard;

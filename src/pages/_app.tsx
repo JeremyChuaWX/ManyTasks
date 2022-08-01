@@ -3,7 +3,7 @@ import { SessionProvider } from "next-auth/react";
 import type { AppType } from "next/dist/shared/lib/utils";
 import superjson from "superjson";
 import BaseLayout from "../modules/common/layouts/base-layout";
-import type { AppRouter } from "../server/router";
+import { AppRouter } from "../server/router/app.router";
 import "../styles/globals.css";
 
 const MyApp: AppType = ({
