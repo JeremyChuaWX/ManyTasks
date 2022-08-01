@@ -29,7 +29,7 @@
 
 - `query("user-tasks")`
   - description: get all tasks for given user
-  - input: 
+  - input:
     - userId
 - `mutation("add-task")`
   - description: add task given the input
