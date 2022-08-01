@@ -27,10 +27,10 @@
 
 ### task router
 
-- query("user-tasks")
+- `query("user-tasks")`
   - description: get all tasks for given user
   - input: userId
-- mutation("add-task")
+- `mutation("add-task")`
   - description: add task given the input
   - input:
     - title
