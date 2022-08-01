@@ -25,11 +25,12 @@
 - routers: `[object_name].router.ts`
 - schemas: `[object_name].schema.ts`
 
-### task router
+### Task router
 
 - `query("user-tasks")`
   - description: get all tasks for given user
-  - input: userId
+  - input: 
+    - userId
 - `mutation("add-task")`
   - description: add task given the input
   - input:
