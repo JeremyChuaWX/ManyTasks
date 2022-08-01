@@ -29,11 +29,11 @@
 
 - query("user-tasks")
   - description: get all tasks for given user
-	- input: userId
+  - input: userId
 - mutation("add-task")
-	- description: add task given the input
-	- input:
-		- title
-		- description
-		- due
-		- done
+  - description: add task given the input
+  - input:
+    - title
+    - description
+    - due
+    - done
