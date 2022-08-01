@@ -1,4 +1,4 @@
-import { TRPCError } from "@trpc/server";
+import * as trpc from "@trpc/server";
 import { z } from "zod";
 import { createProtectedRouter } from "../trpc/create-protected-router";
 
@@ -20,7 +20,7 @@ const taskRouter = createProtectedRouter()
     async resolve({ input, ctx }) {
       const userId = ctx.session.user.id;
 
-      if (!userId) throw new TRPCError({ code: "BAD_REQUEST" });
+      if (!userId) throw new trpc.TRPCError({ code: "BAD_REQUEST" });
 
       return await ctx.prisma.task.create({
         data: {
