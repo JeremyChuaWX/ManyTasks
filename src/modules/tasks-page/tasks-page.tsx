@@ -1,5 +1,5 @@
 import { Task } from "@prisma/client";
-import HeaderComponent from "./header-component";
+import HeaderComponent from "./header-component/header-component";
 import TaskCard from "./task-card";
 
 interface TaskListProps {
