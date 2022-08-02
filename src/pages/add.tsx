@@ -1,5 +1,5 @@
 import { ChangeEvent, FormEvent, useState } from "react";
-import { createTaskInput } from "../schema/task.schema";
+import { addTaskInput } from "../schema/task.schema";
 import { trpc } from "../utils/trpc";
 
 function Add() {
@@ -7,8 +7,8 @@ function Add() {
   const { mutate } = trpc.useMutation(["task.add"]);
 
   const addTask = () => {
-    const input: createTaskInput = {
-      title: "test",
+    const input: addTaskInput = {
+      title: title,
       done: false,
     };
     mutate(input);

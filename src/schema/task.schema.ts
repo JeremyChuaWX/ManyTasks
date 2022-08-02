@@ -1,12 +1,12 @@
 import { z } from "zod";
 
-const createTaskSchema = z.object({
+const addTaskSchema = z.object({
   title: z.string(),
   description: z.string().optional(),
   due: z.date().optional(),
   done: z.boolean(),
 });
 
-type createTaskInput = z.TypeOf<typeof createTaskSchema>;
+type addTaskInput = z.TypeOf<typeof addTaskSchema>;
 
-export { createTaskSchema, type createTaskInput };
+export { addTaskSchema, type addTaskInput };
