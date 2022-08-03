@@ -1,5 +1,5 @@
 import * as trpc from "@trpc/server";
-import { addTaskSchema } from "../../schema/task.schema";
+import { addTaskSchema, queryTaskByIdSchema } from "../../schema/task.schema";
 import { createProtectedRouter } from "../trpc/create-protected-router";
 
 const taskRouter = createProtectedRouter()
@@ -7,6 +7,14 @@ const taskRouter = createProtectedRouter()
     async resolve({ ctx }) {
       return await ctx.prisma.task.findMany({
         where: { userId: ctx.session.user.id },
+      });
+    },
+  })
+  .query("by-id", {
+    input: queryTaskByIdSchema,
+    async resolve({ input, ctx }) {
+      return await ctx.prisma.task.findUnique({
+        where: { id: input.id },
       });
     },
   })

@@ -2,7 +2,7 @@ import { withTRPC } from "@trpc/next";
 import { SessionProvider } from "next-auth/react";
 import type { AppType } from "next/dist/shared/lib/utils";
 import superjson from "superjson";
-import BaseLayout from "../modules/common/layouts/base-layout";
+import BaseLayout from "../components/layouts/base-layout";
 import { AppRouter } from "../server/router/app.router";
 import "../styles/globals.css";
 
