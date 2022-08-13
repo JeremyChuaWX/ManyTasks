@@ -1,4 +1,3 @@
-// src/server/router/index.ts
 import superjson from "superjson";
 import { createRouter } from "../trpc/create-router";
 import { taskRouter } from "./task.router";
