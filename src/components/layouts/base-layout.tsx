@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { ReactNode } from "react";
-import Navbar from "../common/navbar";
+import Navbar from "../common/navbar/navbar";
 
 interface BaseLayoutProps {
   children: ReactNode;
